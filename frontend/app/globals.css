@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* 🌐 Root colors and fonts */
+:root {
+  --background: #e0f2fe; /* Sky blue */
+  --foreground: #171717;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 🌐 Body styling */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* 🌟 Navbar */
+.navbar {
+  @apply flex justify-between items-center px-6 py-3 bg-blue-600 text-white shadow-md;
+}
+.navbar a {
+  @apply px-4 py-2 rounded hover:bg-blue-700 transition;
+}
+
+/* 🌟 Buttons */
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md font-semibold transition transform;
+}
+.btn-primary:hover {
+  @apply bg-blue-700 scale-105;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white px-3 py-2 rounded hover:bg-red-700 transition;
+}
+
+.btn-primary-small {
+  @apply bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition;
+}
+
+/* 🌟 Card */
+.card {
+  @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition;
+}
+
+/* 🌟 Page background */
+.page-background {
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  min-height: 100vh;
+}
+
+/* 🌟 Auth pages (login/register) */
+.auth-background {
+  @apply flex items-center justify-center min-h-screen px-4;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #56ccf2);
+}
+
+.auth-card {
+  @apply bg-white p-8 rounded-2xl shadow-xl w-full max-w-md flex flex-col gap-4;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* App name + icon in center of card */
+.auth-header {
+  @apply flex flex-col items-center justify-center gap-2 mb-6;
+}
+.auth-header h1 {
+  @apply text-3xl font-bold text-blue-800 text-center;
+}
+.auth-header img {
+  @apply w-12 h-12;
+}
+
+/* Inputs */
+.auth-input {
+  @apply border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition;
+}
+
+/* Footer links */
+/* Footer links */
+.auth-footer {
+  @apply text-center mt-3 text-black font-medium; /* changed text color to black */
+}
+.auth-footer a {
+  @apply text-blue-700 hover:underline; /* link stays blue for visibility */
+}
+
+
+/* Welcome back message (on login) */
+.auth-welcome {
+  @apply text-center text-lg font-medium text-white mb-2;
+}
+
+/* 🌟 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* 🌟 Tasks page */
+.tasks-background {
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.task-card {
+  @apply bg-white p-4 rounded-xl shadow-md flex justify-between items-center transition-transform hover:scale-105;
+}
